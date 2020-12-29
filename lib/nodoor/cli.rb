@@ -1,10 +1,12 @@
 module Nodoor
   module CLI
+    extend Dry::CLI::Registry
+
+    register 'list', CLI::ListCommand
+    register 'meta', CLI::MetaCommand
+
     def self.run(argv = ARGV)
-      repo = Repo.new(Dir.pwd)
-      repo.query.each do |entry|
-        puts entry.path
-      end
+      Dry::CLI.new(self).call(arguments: argv)
     end
   end
 end

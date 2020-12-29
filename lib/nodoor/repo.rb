@@ -13,5 +13,9 @@ module Nodoor
         .sort
         .map { Record.new(_1) }
     end
+
+    def fetch(record_path)
+      Record.new(record_path)
+    end
   end
 end

@@ -7,7 +7,7 @@ context Nodoor do
 
   test 'has a CLI that lists files' do
     output, status = Open3.capture2e(
-      File.join(Dir.pwd, 'bin/nodoor'),
+      File.join(Dir.pwd, 'bin/nodoor list'),
       chdir: 'test/fixtures/repo',
     )
 
@@ -19,6 +19,25 @@ context Nodoor do
       parent/child/grandchild.md
       parent/child.md
       parent.md
+    END_OUTPUT
+  end
+
+  test 'has a CLI that detects metadata' do
+    output, status = Open3.capture2e(
+      File.join(Dir.pwd, 'bin/nodoor meta parent.md'),
+      chdir: 'test/fixtures/repo',
+    )
+
+    detail("Status: #{status.inspect}")
+    detail("Output:\n#{output}")
+
+    assert(status == 0)
+    assert(output == <<~END_OUTPUT)
+      ---
+      title: Parent
+      tags:
+      - tag1
+      - tag2
     END_OUTPUT
   end
 end

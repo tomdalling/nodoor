@@ -11,6 +11,7 @@ Gem::Specification.new do |spec|
   spec.homepage = 'https://github.com/tomdalling/nodoor'
 
   spec.add_runtime_dependency 'zeitwerk'
+  spec.add_runtime_dependency 'dry-cli'
 
   spec.add_development_dependency 'test_bench'
 end
