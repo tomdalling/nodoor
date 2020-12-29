@@ -1,0 +1,23 @@
+PATH
+  remote: .
+  specs:
+    nodoor (0.1.0)
+      zeitwerk
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    test_bench (1.2.0.5)
+      test_bench-fixture (>= 1.0.0.0)
+    test_bench-fixture (1.3.1.1)
+    zeitwerk (2.4.2)
+
+PLATFORMS
+  x86_64-darwin-20
+
+DEPENDENCIES
+  nodoor!
+  test_bench
+
+BUNDLED WITH
+   2.2.3
