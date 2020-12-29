@@ -3,10 +3,11 @@ Nodoor
 
 "Vendors can't lock you in if there are no doors"
 
-Nodoor is a "database" that consists of text files in directories. The
-idea is that text files are open and future-proof, so you won't get
-locked in to any particular software. Files and directories will exist
-for decades into the future, and so will text editors.
+Nodoor is a "database" that consists of mostly text files in
+directories, with associated metadata. The idea is that text files are
+open and future-proof, so you won't get locked in to any particular
+software. Files and directories will exist for decades into the
+future, and so will text editors.
 
 It's pronounced like "Hodor". 
 
