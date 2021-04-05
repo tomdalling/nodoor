@@ -1,15 +1,14 @@
 module Nodoor
   class Record
-    attr_reader :path
+    attr_reader :path, :repo
 
-    def initialize(path)
+    def initialize(path, repo:)
       @path = Pathname.new(path)
+      @repo = repo
     end
 
     def metadata
-      path.open do |f|
-        Frontmatter.read(f)
-      end
+      repo.metadata_for(path)
     end
   end
 end
