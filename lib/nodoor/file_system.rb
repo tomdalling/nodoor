@@ -18,5 +18,13 @@ module Nodoor
     def open(path, &block)
       File.open(path.to_s, &block)
     end
+
+    def read(path)
+      File.read(path)
+    end
+
+    def exist?(path)
+      File.exist?(path)
+    end
   end
 end
