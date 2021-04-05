@@ -9,7 +9,7 @@ module Nodoor
       return enum_for(__method__) unless block_given?
 
       file_system.each_file_under(base_directory) do |path|
-        # next unless File.file?(path)
+        next if hidden?(path)
         relative_path = Pathname(path).relative_path_from(base_directory)
         yield fetch(relative_path)
       end
@@ -28,5 +28,9 @@ module Nodoor
     private
 
       attr_reader :base_directory, :file_system
+
+      def hidden?(path)
+        File.basename(path).start_with?('.')
+      end
   end
 end
