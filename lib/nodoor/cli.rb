@@ -1,3 +1,5 @@
+require 'dry/cli'
+
 module Nodoor
   module CLI
     extend Dry::CLI::Registry

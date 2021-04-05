@@ -5,7 +5,6 @@ require 'yaml'
 
 # gems
 require 'zeitwerk'
-require 'dry/cli'
 
 # autoloading
 Zeitwerk::Loader.for_gem.tap do |loader|
@@ -13,4 +12,7 @@ Zeitwerk::Loader.for_gem.tap do |loader|
     'cli' => 'CLI',
   )
   loader.setup
+end
+
+module Nodoor
 end
