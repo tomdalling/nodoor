@@ -19,6 +19,7 @@ context Nodoor do
       parent/child/grandchild.md
       parent/child.md
       parent.md
+      sidecar_metadata.md
     END_OUTPUT
   end
 
